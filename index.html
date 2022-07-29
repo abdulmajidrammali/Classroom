@@ -1,0 +1,31 @@
+<html>
+      <img id="pic" src="https://images.unsplash.com/photo-1564517165906-7309a4d809e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlieWF8ZW58MHx8MHx8&w=1000&q=80
+" width="500px"/>
+<br>
+ 
+<button id="previous"> previous </button>
+<button id="next"> next</button>
+
+<script>
+
+var images;
+
+
+images = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHJKOD8VK-U76eVD6JoWdjF4C3cmeRQdLoFxOXQC9mU9dk-2Sdk4Wm5_9URMSKKAnaSmE&usqp=CAU', 'https://i.redd.it/5k97492sge261.jpg', 'https://cdn.theatlantic.com/thumbor/syZ-e_XiqN6d18EioheopnXC4dU=/900x598/media/img/photo/2013/05/over-libyas-coast/l01_00008193/original.jpg', 'https://media.istockphoto.com/photos/libya-picture-id473797690?k=20&m=473797690&s=612x612&w=0&h=ZAKuWA9ighmfj8xlP1ZEtGV2RZVpVESn0WBJmWrdsqc='];
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  images.push(images.shift());
+  let element_pic = document.getElementById('pic');
+  element_pic.setAttribute("src", images[0]);
+
+});
+
+document.getElementById('previous').addEventListener('click', (event) => {
+  images.unshift(images.slice(-1)[0]);
+  let element_pic2 = document.getElementById('pic');
+  element_pic2.setAttribute("src", images.pop());
+
+});
+
+</script>
